@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="id_add"></div>
+    <script type="text/babel">
+        let a=10;
+        let b=50;
+        let c=30;
+
+        let addition=<div>
+                    {"Addition of Numbers:"}{a+b+c}
+                    {'\n'}
+                    {"Greatest of Numbers:"}{a>b ?(a>c ?a:c):(b>c?b:c)}
+                    </div>
+        ReactDOM.render(addition, document.getElementById("id_add"));
+
+    </script>
+</body>
+</html>

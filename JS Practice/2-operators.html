@@ -1,0 +1,82 @@
+<html>
+	<body>
+	<script>
+        var a = 123;
+        var b= 345;
+        var c=undefined;
+        var d=null;
+        console.log(a+b); //468
+        console.log(a+c); //NaN
+        console.log(a+d); //123
+        
+
+        var a= '123';
+        var b ='234';
+        var c=undefined;
+        var d=null;
+        var e=345
+        console.log(a+b); //123234
+        console.log(a+c); //123Undefined
+        console.log(a+d); //123null
+        console.log(a+e); //123345
+
+
+        var e= true;
+        var f= '234';
+        var g=null;
+        var h=undefined;
+        console.log(e+f); //true234
+        console.log(e+g); //1
+        console.log(f+g); //234null
+        console.log(h+e);//NaN
+
+        
+        var g=false;
+        var h=false;
+        console.log(g+h); //0
+
+        var g=true;
+        var h=false;
+        console.log(g+h); //1
+
+        var i=null;
+        var j=null;
+        console.log(i+j); //0
+
+        var i=undefined;
+        var j=null;
+        console.log(i+j); //NaN
+
+        var i=undefined;
+        var j=undefined;
+        console.log(i+j); //NaN
+
+        var i=1;
+        var j=undefined;
+        console.log(i+j); //NaN
+
+        var i=1;
+        var j=null;
+        console.log(i+j); //1
+
+        var i="1";
+        var j=null;
+        console.log(i+j); //1null
+
+        var i="1";
+        var j=undefined;
+        console.log(i+j); //1undefined
+
+        var i=null;
+        var j=true;
+        console.log(i-j); //-1
+
+        var i=undefined;
+        var j=true;
+        console.log(i-j); //NaN
+
+
+
+    </script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="table_holerdiv"></div>
+    <script type="text/babel">
+    let arr_list=[
+                 {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    gender: 'Male'
+                 },
+                 {
+                    firstName: 'meera',
+                    lastName: 'Doe',
+                    gender: 'Female'
+                 },
+                 {
+                    firstName: 'Jsamine',
+                    lastName: 'Doe',
+                    gender: 'Female'
+                 },
+                 {
+                    firstName: 'Jagan',
+                    lastName: 'Doe',
+                    gender: 'Male'
+                 },
+                 
+                 ];
+    var table_gender= <div>
+                            {
+                                arr_list.map((ele)=>{return <table border='2'>
+                                    <tr>
+                                    <td>{ele.firstName}</td>
+                                    <td>{ele.lastName}</td>
+                                    <td>{ele.gender}</td>
+                                    <td>{ele.gender=='Male'?<img src="https://i.pinimg.com/736x/2a/4e/8d/2a4e8dab6791ed643d5180bc72167f6d.jpg" width="100px"></img>:'FemaleImage'}</td>
+                                </tr>
+                                    </table>})
+                               
+                            }
+                          </div>
+    ReactDOM.render(table_gender,document.getElementById("table_holerdiv"));
+</script>
+
+    
+</body>
+</html>

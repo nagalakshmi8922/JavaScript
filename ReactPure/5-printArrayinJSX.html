@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="array_div"></div>
+    <script type="text/babel">
+        let arr=[1,2,3,4,5,6,7,8,9,10,11];
+        let arr_str=["abc", "def", "ghi", "jkl"]
+        
+        var arr_holder = <div>
+                        {
+                            arr+arr_str
+                        }
+                         </div>
+
+    ReactDOM.render(arr_holder, document.getElementById("array_div"));
+    </script>
+</body>
+</html>

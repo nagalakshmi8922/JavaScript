@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="countries_div"></div>
+    <script type="text/babel">
+        var Country= function() {
+            var [countries,setCountries] = React.useState(['India','China','Pakistan','USA','United States','UK','Russia']);
+            function addCountry(){
+            let newCountry= document.getElementById('add-country').value;
+            console.log(newCountry);
+            setCountries([...countries,newCountry]);
+        }
+            return(
+                <div>
+                    Country:<input type="text" id="add-country"></input>    
+                    
+                    <button type="submit"  onClick={()=>{addCountry()}}>Add</button>   
+                    <ul>{
+                        countries.map((element)=>{
+                            return <div>{element}</div>
+                        }) 
+                    }  
+                    </ul>  
+                </div>
+            )
+        }
+        //function setCountries
+        
+        ReactDOM.render(<Country></Country>,document.getElementById("countries_div"))
+
+    </script>
+</body>
+</html>

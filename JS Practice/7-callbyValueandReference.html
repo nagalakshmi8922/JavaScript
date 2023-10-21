@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var primitive_val=10;
+        var reference_val=[10,20]
+        function primitive_val_fn(val) {
+            primitive_val = primitive_val + val;
+        }
+        function reference_val_fn(val) {
+            val[0]=50;
+        }
+        primitive_val_fn(primitive_val); //it doesn't change the value of the original variable 
+                                        //because for primitive variables,value will be passed for function.
+        console.log(primitive_val);
+        reference_val_fn(reference_val); //it changes the original value of the variable 
+                                        //because for derived datatypes,reference value will be passed.
+        console.log(reference_val);
+    </script>
+</body>
+</html>

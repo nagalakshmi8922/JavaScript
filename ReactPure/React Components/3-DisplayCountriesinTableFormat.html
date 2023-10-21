@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="countries_div" ></div>
+    <script type="text/babel">
+        var Countriesobj=function(){
+            let [countries_obj,setCountiresObj]= React.useState([
+                {
+                    name:"India",
+                    Capital:"New Delhi",
+                    population:100000
+                },{
+                    name:"Russia",
+                    Capital:"Moscow",
+                    population:500000
+                },{
+                    name:"USA",
+                    Capital:"Washington DC",
+                    population:1300000
+                },{
+                    name:"China",
+                    Capital:"Beijing",
+                    population:"1700000"
+                }
+            ])
+            var originalCountries=JSON.parse(JSON.stringify(countries_obj));
+            console.log(originalCountries);
+            console.log(countries_obj);
+            var abc;
+            function filterTable(name){                
+               let val=  document.getElementById("c_input").value;
+               abc = countries_obj.filter((country_obj)=>{
+                if(country_obj.name === val){
+                    console.log("if block");
+                    return true;
+                }
+                else{
+                    console.log("else block");
+                    console.log();
+                    setCountiresObj([...originalCountries])
+                }
+            })
+            
+            if(abc.length){ 
+                let temp=[...countries_obj];
+                temp=[];
+                temp.push(...abc);
+                setCountiresObj([...temp]);            
+             }
+           
+        }
+           
+            return(
+                <div> 
+                <table border="2">
+                 <thead><tr><td><input type="text" placeholder="country" id="c_input" onChange={()=>{filterTable(name)}}/></td><td onKeyUp={()=>{filterTable()}}>Capital</td><td onClick={()=>{}}>population</td></tr></thead>  
+                 <tbody>              
+                        {  
+                            countries_obj.map((country_obj)=>{   
+                                return  (  
+                                <tr>  
+                                <td>{country_obj.name}</td>      
+                                <td>{country_obj.Capital}</td>
+                                <td>{country_obj.population}</td>
+                                </tr>
+                                )
+                               })
+                            }
+                    </tbody>
+                    </table>
+                
+                    </div>
+            )
+        
+        }
+        ReactDOM.render(<Countriesobj></Countriesobj>,document.getElementById("countries_div"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <h3 id="h2"></h3>
+    <ul id="d2"></ul>
+
+   <script type="text/babel">
+        var rh1= <h1>Welcome to React- JSX</h1>;
+        var rh2= <h2>Lets create list using JSX</h2>;
+
+        var countries =['India', 'China', 'United States', 'United Kingdom', 'Pakistan', 'South Africa'];
+        var ul_list =
+                        <ul> 
+                            {
+                                countries.map((country)=>{
+                                    return <li>{country}</li>
+                                })
+                            }
+                        </ul>
+        console.log(ul_list);
+        ReactDOM.render(rh1,document.getElementById("d1"));
+        ReactDOM.render(rh2,document.getElementById("h2"));
+        ReactDOM.render(ul_list,document.getElementById("d2"));
+   </script> 
+</body>
+</html>

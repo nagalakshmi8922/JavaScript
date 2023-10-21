@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="greater"></div>
+    <ul id="style"></ul>
+    <h1 id="sum"></h1>
+    <script type="text/babel">
+        var arr1=[12,45,100,56,36,67,97]
+        //print array vales greater than 25.
+        var g8r=<div>
+                    {
+                        arr1.map((a)=>(a>25?<li>{a}</li>:null))
+                    }
+                 </div>
+    ReactDOM.render(g8r,document.getElementById("greater"));
+    
+    //printing even values in italic and odd in Bold.
+        var styling = <div>
+                        {
+                            arr1.map((ele)=>{return (ele%2===0?<i><li>{ele}</li></i>:<b><li>{ele}</li></b>)})
+                        }            
+                      </div>
+    ReactDOM.render(styling,document.getElementById("style"));
+
+    //sum of Array Values
+        var sum = <div>
+                    {
+                        arr1.reduce((acc,next)=>{return acc+next})
+                    }
+                  </div>
+    ReactDOM.render(sum,document.getElementById("sum"));
+
+
+    </script>
+</body>
+</html>

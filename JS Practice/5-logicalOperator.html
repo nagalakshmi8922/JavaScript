@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=100;
+        var b=false;
+        var c= b ||--a; //--a value will be stored in c variable because condition is true
+        console.log(c);
+        console.log(a);
+
+        var c= b && --a; //this line wont be executed because 1st operand is fasle
+        
+    </script>
+</body>
+</html>

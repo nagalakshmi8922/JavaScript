@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="overview"></div>
+    <div id="overview1"></div>
+    <div id="overview2"></div>
+    <script type="text/babel">
+        let str="Hello There";
+        let str_len= <div>{"string length is:"}{str.length}</div>
+        let str_upper= <div>{"Uppercase of the String is:"}{str.toUpperCase()}</div>
+        let str_reverse=<div>{"String Reverse is:"}{str.split('').reverse().join('')}</div>
+        ReactDOM.render(str_len,document.getElementById("overview"));
+        ReactDOM.render(str_upper,document.getElementById("overview1"));
+        ReactDOM.render(str_reverse,document.getElementById("overview2"));
+    </script>
+</body>
+</html>

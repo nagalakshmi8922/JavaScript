@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar=[10,31,20,30,40,17];
+        var filter_ar= ar.filter(function(element)
+            {
+                if(element%2 == 0){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+             })
+             //Filter returns the new array with true condition
+        console.log(filter_ar);
+    </script>
+</body>
+</html>
